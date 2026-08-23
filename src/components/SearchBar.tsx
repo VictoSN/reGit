@@ -18,7 +18,6 @@ function SearchBar() {
         navigate("/")
     }
 
-
     return (
         <div className="flex sticky top-0 bg-[#0e1113] justify-between items-center w-full text-white px-5 border-solid border-b border-gray-700">
             <button onClick={onReturnHome} className='cursor-pointer'>
