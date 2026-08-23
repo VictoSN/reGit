@@ -5,10 +5,9 @@ import type { Status } from '../hooks/useGitHubUser'
 interface StatusMessageProps {
     status: Status
     query: string
-    inputRef: React.RefObject<HTMLInputElement | null>
 }
 
-function StatusMessage({ status, query, inputRef }: StatusMessageProps) {
+function StatusMessage({ status, query }: StatusMessageProps) {
     if (status !== "notFound" && status !== "error" && status !== "idle" && status !== "empty") return null
 
     const text = {
@@ -25,7 +24,7 @@ function StatusMessage({ status, query, inputRef }: StatusMessageProps) {
             <p className="text-base text-[#8ba2ad]">{text.sub}</p>
 
             {/* Used href address to focus to input */}
-            <button onClick={() => inputRef.current?.focus()} className='cursor-pointer bg-white rounded-3xl px-3 py-2 mt-3 text-black font-semibold'>{text.button}</button>
+            <button className='cursor-pointer bg-white rounded-3xl px-3 py-2 mt-3 text-black font-semibold'>{text.button}</button>
         </div>   
     )     
 }
