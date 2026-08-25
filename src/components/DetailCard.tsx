@@ -1,6 +1,6 @@
 import type { GitHubRepo } from "../api/github"
 
-interface StatusCardProps {
+interface DetailCardProps {
     repo: GitHubRepo
 }
 
@@ -27,7 +27,7 @@ const languageColors: Record<string, string> = {
     "Jupyter Notebook": "#DA5B0B",
 }
 
-function StatusCard({ repo }: StatusCardProps) {
+function DetailCard({ repo }: DetailCardProps) {
     function getLanguageColor(lang: string): string {
         return languageColors[lang] ?? "#8b949e"
     }
@@ -65,4 +65,4 @@ function StatusCard({ repo }: StatusCardProps) {
     )
 }
 
-export default StatusCard
+export default DetailCard

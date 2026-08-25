@@ -1,5 +1,5 @@
 import type { GitHubRepo } from "../api/github"
-import StatusCard from "./StatusCard"
+import DetailCard from "./DetailCard"
 
 interface RepoCardProps {
     repo: GitHubRepo
@@ -25,7 +25,7 @@ function RepoCard({ repo, openUser, openRepo }: RepoCardProps) {
                 </button>
                 <p className="text-[#8ba2ad] text-sm">{repo.description}</p>
 
-                <StatusCard repo={repo}/>
+                <DetailCard repo={repo}/>
             </div>
         </div>
     )

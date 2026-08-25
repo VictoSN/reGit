@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { useEffect, useState } from "react"
 import { getGitHubReadme, getGitHubUser, type GitHubRepo, type GitHubRepoCommit, type GitHubRepoContent, type GitHubUser } from "../api/github"
-import StatusCard from "./StatusCard"
+import DetailCard from "./DetailCard"
 
 interface RepoPageProps {
     repo: GitHubRepo
@@ -89,7 +89,7 @@ function RepoPage({ repo, repoCommits, repoContents, repoCount, openUser }: Repo
                     </div>
                 </div>))}
             </div>
-            <StatusCard repo={repo} />
+            <DetailCard repo={repo} />
 
             <div className="flex flex-col mt-4 rounded-sm border-solid border-1 border-gray-600 text-[#8ba2ad] p-2">
                 <div className="flex flex-row gap-2 items-center border-solid border-b-2 border-[#f78166] w-fit">
