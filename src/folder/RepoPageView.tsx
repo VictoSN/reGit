@@ -22,6 +22,8 @@ function RepoPageView() {
                 if (r) searchUser(r.owner.login)
             })
         }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [owner, repo])
 
     return specificRepo && repoCommits && repoContents && user ?
