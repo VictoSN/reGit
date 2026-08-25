@@ -14,13 +14,10 @@ function useGitHubUsers() {
     const searchUser = async(username: string) => {
         setStatus("loading")
         try {
-            const user = await getGitHubUser(username)
+            // Make the api call concurrently
+            const [user, repos, stars] = await Promise.all([getGitHubUser(username), getGitHubRepos(username), getGitHubStars(username)])
             setUser(user)
-
-            const repos = await getGitHubRepos(username)
             setRepos(repos)
-
-            const stars = await getGitHubStars(username)
             setStars(stars)
 
             setStatus(repos.length === 0 ? "empty" : "success")

@@ -10,6 +10,7 @@ function usePopularRepos() {
     useEffect(() => {
         async function load() {
             try {
+                // Make the api call concurrently
                 const [repos, forked] = await Promise.all([getGitHubPopular(), getGitHubForks()])
                 setPopularRepos(repos)
                 setForkedRepos(forked)

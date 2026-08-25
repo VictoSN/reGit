@@ -14,13 +14,10 @@ function useGitHubRepo() {
             const data = await getGitHubRepo(owner, repo)
             setSpecificRepo(data)
 
-            const commits = await getGitHubCommits(owner, repo)
+            // Make the api call concurrently
+            const [commits, contents, count] = await Promise.all([getGitHubCommits(owner, repo), getGitHubContents(owner, repo), getGitHubCommitCount(owner, repo)])
             setRepoCommits(commits)
-
-            const contents = await getGitHubContents(owner, repo)
             setRepoContents(contents)
-
-            const count = await getGitHubCommitCount(owner, repo)
             setRepoCount(count)
 
             return data
