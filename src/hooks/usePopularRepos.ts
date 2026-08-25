@@ -14,7 +14,7 @@ function usePopularRepos() {
                 const [repos, forked] = await Promise.all([getGitHubPopular(), getGitHubForks()])
                 setPopularRepos(repos)
                 setForkedRepos(forked)
-            } catch (error) {
+            } catch {
                 setFailed(true)
             }
         }

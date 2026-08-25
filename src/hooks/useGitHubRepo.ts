@@ -21,7 +21,7 @@ function useGitHubRepo() {
             setRepoCount(count)
 
             return data
-        } catch (error) {
+        } catch {
             setFailed(true)
         }
     }
