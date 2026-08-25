@@ -1,8 +1,8 @@
 import SearchBar from './components/SearchBar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import HomePage from './folder/HomePage'
-import RepoPageView from './folder/RepoPageView'
-import UserPage from './folder/UserPage'
+import HomePage from './pages/HomePage'
+import RepoPageView from './pages/RepoPageView'
+import UserPage from './pages/UserPage'
 
 function App() {
   return (
